@@ -7,24 +7,33 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header>
+    <header>
     <div class="container header-container">
-        <div class="logo">[Your Company Name]</div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo-perusahaan.png" alt="Logo Perusahaan">
+                <span class="company-name">Contoh web promosi perusahaan</span>
+            </a>
+        </div>
+        
+        <div class="header-top">
+            <div class="language-switcher">
+                <label for="language-select">Select Language</label>
+                <select id="language-select">
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="en" selected>English</option>
+                </select>
+            </div>
+        </div>
+        
         <nav>
             <ul>
-                <li><a href="index.html" id="nav-home">Home</a></li>
-                <li><a href="about.html" id="nav-about">About Us</a></li>
-                <li><a href="products.html" id="nav-products">Products</a></li>
-                <li><a href="contact.html" id="nav-contact">Contact Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="language-switcher">
-            <label for="language-select" class="sr-only">Select Language</label>
-            <select id="language-select">
-                <option value="id">Bahasa Indonesia</option>
-                <option value="en" selected>English</option>
-            </select>
-        </div>
     </div>
 </header>
 
