@@ -18,7 +18,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Header & Navigasi */
+/* Header dan Navigasi */
 header {
     background: #1a1a1a;
     color: #fff;
@@ -61,10 +61,100 @@ header {
     gap: 10px;
 }
 
-.header-top .language-switcher label {
+/* Tampilan Desktop (Layar Besar) */
+.main-menu {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
+.main-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.main-menu a:hover {
+    background-color: #007bff;
+}
+
+.menu-toggle {
+    display: none; /* Tombol hamburger disembunyikan di desktop */
+}
+
+/* Tampilan Mobile (Layar Kecil) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-top {
+        margin-top: 1rem;
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Menampilkan tombol hamburger */
+    .menu-toggle {
+        display: flex;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Menyembunyikan menu dan menatanya untuk mobile */
+    .main-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    .main-menu.is-active {
+        display: flex; /* Ditampilkan saat tombol diklik */
+    }
+
+    .main-menu li {
+        text-align: center;
+    }
+
+    .main-menu a {
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+        border-radius: 0;
+    }
+}
 /* Dropdown Terjemahan */
 #language-select {
     background-color: #1a1a1a;
@@ -178,3 +268,241 @@ header {
 
 /* Halaman Produk */
 .products {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.section-description {
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.product-highlight {
+    margin-bottom: 4rem;
+}
+
+.product-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card.featured {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+    padding: 3rem;
+    background-color: #f0f8ff; /* Warna latar belakang menonjol */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.product-card.featured .product-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card.featured .product-info {
+    flex: 1;
+}
+
+.product-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.product-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-card .price span {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #777;
+}
+
+.product-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.product-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* ======================================================= */
+/* Layanan */
+/* ======================================================= */
+.services {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.services-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 300px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img {
+    width: 60px;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+/* ======================================================= */
+/* Berita */
+/* ======================================================= */
+.news {
+    padding: 4rem 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.news h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: left;
+    overflow: hidden;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    margin: 1.5rem 1.5rem 0.5rem 1.5rem;
+    color: #333;
+}
+
+.news-card p {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.news-card .read-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.news-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* ======================================================= */
+/* Media Queries */
+/* ======================================================= */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header-top {
+        margin-top: 1rem;
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    .main-menu {
+        position: static;
+        width: 100%;
+        background-color: transparent;
+        box-shadow: none;
+        flex-direction: column;
+    }
+    .main-menu li {
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .product-card.featured {
+        flex-direction: column;
+        text-align: center;
+    }
+    .product-card.featured .product-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+    .main-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
