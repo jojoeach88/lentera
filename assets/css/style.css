@@ -47,23 +47,26 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
+    flex-direction: column; /* Mengubah susunan menu menjadi vertikal (bertumpuk) */
     justify-content: center;
+    align-items: center; /* Merata tengahkan item menu secara horizontal */
     margin: 0;
     padding: 0;
-    gap: 20px;
+    gap: 10px; /* Memberikan jarak antar item menu */
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    padding: 10px 20px; /* Menambahkan padding untuk area klik yang lebih besar */
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 header nav a:hover {
-    color: #007bff;
+    background-color: #007bff; /* Memberikan latar belakang saat hover */
 }
-
 /* Media Queries untuk tampilan mobile */
 @media (min-width: 769px) {
     header nav {
