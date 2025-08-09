@@ -1,52 +1,47 @@
-/* ======================================================= */
-/* Tampilan Responsif dan Modern */
-/* ======================================================= */
-
-/* Pengaturan Dasar */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 2rem;
-}
-
 /* Header */
 header {
     background: #1a1a1a;
     color: #fff;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center;
 }
 
 .header-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    padding: 0 2rem;
 }
 
 .logo img {
-    max-height: 50px; /* Diperbaiki dari 20px agar tidak terlalu kecil */
+    max-height: 50px;
     width: auto;
 }
 
-.logo a {
-    text-decoration: none;
-    color: inherit;
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-/* Navigasi Menu */
+.header-top .language-switcher {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-top .language-switcher label {
+    margin: 0;
+}
+
+/* Navigasi */
 header nav {
     margin-top: 1rem;
+    width: 100%;
+    order: 2; /* Menempatkan navigasi di bawah elemen lain */
+    text-align: center;
 }
 
 header nav ul {
@@ -55,247 +50,25 @@ header nav ul {
     justify-content: center;
     margin: 0;
     padding: 0;
+    gap: 20px;
 }
 
 header nav a {
-    display: inline-block;
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px; /* Mengganti padding default tautan */
-    border-radius: 50px;
-    border: 2px solid transparent;
-    transition: background-color 0.3s, border-color 0.3s;
-    font-weight: bold;
-    margin: 0 5px; /* Menambahkan margin di antara tombol */
+    font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
 header nav a:hover {
-    background-color: #007bff;
-    border-color: #007bff;
-}
-
-/* Dropdown Terjemahan */
-.language-switcher {
-    margin-top: 1rem;
-    position: relative;
-    display: inline-block;
-}
-
-#language-select {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800.png?text=Latar+Belakang+Hosting') no-repeat center center/cover;
-    color: #fff;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 24px;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Halaman Produk */
-.products {
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.products h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.product-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-10px);
-}
-
-.product-card h3 {
     color: #007bff;
-    margin-top: 0;
 }
 
-.product-card .price {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.product-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-}
-
-.product-card ul li {
-    margin-bottom: 0.5rem;
-}
-
-/* Tombol WhatsApp */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 12px;
-    border-radius: 50%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-}
-
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-}
-
-.whatsapp-btn img {
-    width: 30px;
-}
-
-/* Halaman Kontak */
-.contact-form {
-    padding: 4rem 0;
-}
-
-.contact-form .container {
-    display: flex;
-    justify-content: center;
-}
-
-.contact-form form {
-    width: 100%;
-    max-width: 600px;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.contact-form h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: #555;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 1.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form .btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px;
-    font-size: 1.1rem;
-    border-radius: 50px;
-    transition: background-color 0.3s;
-}
-
-.contact-form .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Media Queries untuk Responsif */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
+/* Media Queries untuk tampilan mobile */
+@media (min-width: 769px) {
     header nav {
-        margin-top: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .product-list {
-        grid-template-columns: 1fr;
+        margin-top: 0;
+        width: auto;
+        order: 0;
     }
 }
