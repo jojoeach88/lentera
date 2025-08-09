@@ -9,21 +9,25 @@
 <body>
 
     <header>
-        <div class="container header-container">
-            <div class="logo">[Nama Perusahaan]</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Beranda</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="products.html">Produk</a></li>
-                    <li><a href="contact.html">Hubungi Kami</a></li>
-                </ul>
-            </nav>
-            <div class="language-switcher">
-                <button id="translate-btn">English</button>
-            </div>
+    <div class="container header-container">
+        <div class="logo">[Nama Perusahaan]</div>
+        <nav>
+            <ul>
+                <li><a href="index.html" id="nav-home">Beranda</a></li>
+                <li><a href="about.html" id="nav-about">Tentang Kami</a></li>
+                <li><a href="products.html" id="nav-products">Produk</a></li>
+                <li><a href="contact.html" id="nav-contact">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+        <div class="language-switcher">
+            <label for="language-select" class="sr-only">Pilih Bahasa</label>
+            <select id="language-select">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+            </select>
         </div>
-    </header>
+    </div>
+</header>
 
     <main>
         <section class="hero">
