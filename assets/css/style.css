@@ -39,6 +39,10 @@ header {
     font-size: 1.5rem;
     font-weight: bold;
 }
+.logo img {
+    max-height: 50px; /* Atur tinggi maksimum logo */
+    width: auto;
+}
 header nav {
     margin-top: 1rem; /* Memberi jarak antara menu navigasi dan logo */
 }
