@@ -1,12 +1,18 @@
-/* General Styles */
+/* ======================================================= */
+/* Tampilan Responsif dan Modern */
+/* ======================================================= */
+
+/* Pengaturan Dasar */
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     line-height: 1.6;
+    background-color: #f4f4f4; /* Warna latar belakang yang lebih terang */
+    color: #333;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px; /* Lebar maksimum yang lebih besar */
     margin: auto;
     overflow: hidden;
     padding: 0 2rem;
@@ -14,24 +20,52 @@ body {
 
 /* Header */
 header {
-    background: #333;
+    background: #1a1a1a; /* Warna gelap yang modern */
     color: #fff;
     padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Efek bayangan */
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Memungkinkan wrap pada layar kecil */
 }
-/* Styling untuk Dropdown Terjemahan */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+header nav a:hover {
+    background-color: #333; /* Efek hover yang lebih baik */
+}
+
+/* Dropdown Terjemahan */
 .language-switcher {
     position: relative;
     display: inline-block;
+    margin-top: 5px;
 }
 
 #language-select {
-    background-color: #333;
+    background-color: #1a1a1a;
     color: #fff;
     border: 1px solid #fff;
     padding: 8px 12px;
@@ -43,29 +77,93 @@ header {
     appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
     background-repeat: no-repeat;
-    background-position: right 8px top 50%;
+    background-position: right 8px center;
 }
 
-/* Aksesibilitas: Sembunyikan label secara visual */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    border: 0;
-}
-header nav ul {
-    list-style: none;
-    display: flex;
-}
-
-header nav a {
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800.png?text=Latar+Belakang+Hosting') no-repeat center center/cover;
     color: #fff;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
     text-decoration: none;
-    margin-left: 20px;
+    border-radius: 50px; /* Tombol yang lebih modern */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Halaman Produk */
+.products {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card h3 {
+    color: #007bff;
+    margin-top: 0;
+}
+
+.product-card .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.product-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.product-card ul li {
+    margin-bottom: 0.5rem;
 }
 
 /* Tombol WhatsApp */
@@ -75,11 +173,41 @@ header nav a {
     right: 20px;
     background-color: #25D366;
     color: white;
-    padding: 10px;
+    padding: 12px; /* Ukuran yang sedikit lebih besar */
     border-radius: 50%;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
 }
 
 .whatsapp-btn img {
-    width: 40px;
+    width: 30px;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
+    }
 }
