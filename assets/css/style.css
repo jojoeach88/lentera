@@ -7,12 +7,12 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Warna latar belakang yang lebih terang */
+    background-color: #f4f4f4;
     color: #333;
 }
 
 .container {
-    max-width: 1200px; /* Lebar maksimum yang lebih besar */
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
     padding: 0 2rem;
@@ -24,27 +24,31 @@ header {
     color: #fff;
     padding: 1rem 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    text-align: center; /* Tambahkan ini agar konten header rata tengah */
+    text-align: center;
 }
 
 .header-container {
     display: flex;
-    flex-direction: column; /* Mengubah susunan elemen menjadi vertikal */
+    flex-direction: column;
     justify-content: center;
-    align-items: center; /* Rata tengah secara horizontal */
+    align-items: center;
 }
 
 .logo img {
-    max-height: 20px; /* Atur tinggi maksimum logo */
+    max-height: 50px; /* Diperbaiki dari 20px agar tidak terlalu kecil */
     width: auto;
 }
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
 }
+
+/* Navigasi Menu */
 header nav {
-    margin-top: 1rem; /* Memberi jarak antara menu navigasi dan logo */
+    margin-top: 1rem;
 }
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -54,49 +58,27 @@ header nav ul {
 }
 
 header nav a {
+    display: inline-block;
     color: #fff;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
-    border-radius: 5px;
+    padding: 10px 15px; /* Mengganti padding default tautan */
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-weight: bold;
+    margin: 0 5px; /* Menambahkan margin di antara tombol */
 }
 
 header nav a:hover {
-    background-color: #333;
-}
-
-.language-switcher {
-    margin-top: 1rem; /* Memberi jarak antara dropdown bahasa dan menu navigasi */
-}
-/* Gaya untuk Tombol Navigasi */
-.nav-btn {
-    display: inline-block;
-    background-color: transparent;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 50px; /* Sudut membulat */
-    border: 2px solid transparent; /* Border transparan */
-    transition: background-color 0.3s, border-color 0.3s;
-    font-weight: bold;
-}
-
-.nav-btn:hover {
     background-color: #007bff;
     border-color: #007bff;
 }
 
-/* Mengatur ulang gaya tautan default */
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
 /* Dropdown Terjemahan */
 .language-switcher {
+    margin-top: 1rem;
     position: relative;
     display: inline-block;
-    margin-top: 5px;
 }
 
 #language-select {
@@ -142,7 +124,7 @@ header nav a {
     color: #fff;
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 50px; /* Tombol yang lebih modern */
+    border-radius: 50px;
     transition: background-color 0.3s;
 }
 
@@ -208,7 +190,7 @@ header nav a {
     right: 20px;
     background-color: #25D366;
     color: white;
-    padding: 12px; /* Ukuran yang sedikit lebih besar */
+    padding: 12px;
     border-radius: 50%;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -223,33 +205,7 @@ header nav a {
     width: 30px;
 }
 
-/* Media Queries untuk Responsif */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav {
-        margin-top: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .product-list {
-        grid-template-columns: 1fr; /* Satu kolom di layar kecil */
-    }
-}
-/* ======================================================= */
 /* Halaman Kontak */
-/* ======================================================= */
-
 .contact-form {
     padding: 4rem 0;
 }
@@ -261,7 +217,7 @@ header nav a {
 
 .contact-form form {
     width: 100%;
-    max-width: 600px; /* Batasi lebar formulir agar tidak terlalu besar di layar lebar */
+    max-width: 600px;
     background: #fff;
     padding: 2rem;
     border-radius: 10px;
@@ -290,18 +246,18 @@ header nav a {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box; /* Memastikan padding dan border dihitung dalam lebar total */
+    box-sizing: border-box;
     transition: border-color 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #007bff; /* Efek fokus yang lebih jelas */
-    outline: none; /* Menghilangkan outline default browser */
+    border-color: #007bff;
+    outline: none;
 }
 
 .contact-form textarea {
-    resize: vertical; /* Hanya izinkan resize secara vertikal */
+    resize: vertical;
 }
 
 .contact-form .btn {
@@ -318,4 +274,28 @@ header nav a {
 
 .contact-form .btn:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
 }
