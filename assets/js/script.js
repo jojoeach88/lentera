@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mainMenu.classList.toggle('is-active');
         const isExpanded = mainMenu.classList.contains('is-active');
         menuToggle.setAttribute('aria-expanded', isExpanded);
+    }); // <-- The closing brace was missing here
+
     const languageSelect = document.getElementById('language-select');
 
     // Data terjemahan dalam format JSON yang terstruktur
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.hero p').textContent = translations[lang].heroSubtitle;
             document.querySelector('.hero .btn').textContent = translations[lang].btnSeeProducts;
         }
-        
+
         // Halaman Produk (jika ada elemennya)
         const productsHeadingElement = document.querySelector('.products h2');
         if (productsHeadingElement) {
