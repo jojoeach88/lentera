@@ -34,14 +34,13 @@ header {
     align-items: center; /* Rata tengah secara horizontal */
 }
 
-
+.logo img {
+    max-height: 20px; /* Atur tinggi maksimum logo */
+    width: auto;
+}
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-}
-.logo img {
-    max-height: 50px; /* Atur tinggi maksimum logo */
-    width: auto;
 }
 header nav {
     margin-top: 1rem; /* Memberi jarak antara menu navigasi dan logo */
