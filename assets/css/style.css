@@ -56,7 +56,30 @@ header nav a {
 header nav a:hover {
     background-color: #333; /* Efek hover yang lebih baik */
 }
+/* Gaya untuk Tombol Navigasi */
+.nav-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 50px; /* Sudut membulat */
+    border: 2px solid transparent; /* Border transparan */
+    transition: background-color 0.3s, border-color 0.3s;
+    font-weight: bold;
+}
 
+.nav-btn:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Mengatur ulang gaya tautan default */
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
 /* Dropdown Terjemahan */
 .language-switcher {
     position: relative;
