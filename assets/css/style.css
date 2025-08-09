@@ -61,100 +61,6 @@ header {
     gap: 10px;
 }
 
-/* Tampilan Desktop (Layar Besar) */
-.main-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.main-menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 10px 15px;
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 5px;
-}
-
-.main-menu a:hover {
-    background-color: #007bff;
-}
-
-.menu-toggle {
-    display: none; /* Tombol hamburger disembunyikan di desktop */
-}
-
-/* Tampilan Mobile (Layar Kecil) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .header-top {
-        margin-top: 1rem;
-        order: 1;
-        width: 100%;
-        justify-content: center;
-    }
-
-    /* Menampilkan tombol hamburger */
-    .menu-toggle {
-        display: flex;
-        width: 30px;
-        height: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        position: absolute;
-        top: 1rem;
-        right: 2rem;
-        z-index: 1000;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #fff;
-        transition: all 0.3s ease-in-out;
-    }
-
-    /* Menyembunyikan menu dan menatanya untuk mobile */
-    .main-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        flex-direction: column;
-        background-color: #333;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-
-    .main-menu.is-active {
-        display: flex; /* Ditampilkan saat tombol diklik */
-    }
-
-    .main-menu li {
-        text-align: center;
-    }
-
-    .main-menu a {
-        padding: 1rem 0;
-        display: block;
-        width: 100%;
-        border-radius: 0;
-    }
-}
 /* Dropdown Terjemahan */
 #language-select {
     background-color: #1a1a1a;
@@ -172,9 +78,9 @@ header {
     background-position: right 8px center;
 }
 
-/* Tombol Hamburger (Mobile) */
+/* Tombol Hamburger */
 .menu-toggle {
-    display: none; /* Default tersembunyi di desktop */
+    display: none; /* Default: disembunyikan */
     width: 30px;
     height: 20px;
     background: transparent;
@@ -195,43 +101,23 @@ header {
     transition: all 0.3s ease-in-out;
 }
 
-/* Menu Navigasi (Mobile) */
+/* Menu Navigasi */
 .main-menu {
-    display: none; /* Default tersembunyi */
     list-style: none;
     padding: 0;
     margin: 0;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    background-color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 999;
-}
-
-.main-menu.is-active {
-    display: block; /* Ditampilkan saat class 'is-active' ditambahkan oleh JS */
-}
-
-.main-menu li {
-    padding: 10px 20px;
-    text-align: left;
+    /* Gaya untuk Desktop dan Mobile akan diatur di media queries */
 }
 
 .main-menu a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
-    display: block;
-    transition: color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
 }
 
-.main-menu a:hover {
-    color: #007bff;
-}
-
-/* Hero Section */
+/* Tampilan Hero Section */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x800.png?text=Latar+Belakang+Hosting') no-repeat center center/cover;
     color: #fff;
@@ -301,7 +187,7 @@ header {
     gap: 2rem;
     text-align: left;
     padding: 3rem;
-    background-color: #f0f8ff; /* Warna latar belakang menonjol */
+    background-color: #f0f8ff;
     box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
@@ -350,9 +236,7 @@ header {
     gap: 2rem;
 }
 
-/* ======================================================= */
 /* Layanan */
-/* ======================================================= */
 .services {
     padding: 4rem 0;
     text-align: center;
@@ -393,9 +277,7 @@ header {
     margin-top: 0;
 }
 
-/* ======================================================= */
 /* Berita */
-/* ======================================================= */
 .news {
     padding: 4rem 0;
     text-align: center;
@@ -450,10 +332,31 @@ header {
     text-decoration: underline;
 }
 
-/* ======================================================= */
 /* Media Queries */
-/* ======================================================= */
+@media (min-width: 769px) {
+    /* Tampilan Desktop (Layar Besar) */
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-menu {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    
+    .main-menu a {
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    .main-menu a:hover {
+        background-color: #007bff;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Tampilan Mobile (Layar Kecil) */
     .header-container {
         flex-direction: column;
         align-items: center;
@@ -474,35 +377,39 @@ header {
     }
 
     .main-menu {
-        position: static;
+        display: none; /* Tersembunyi secara default */
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
-        background-color: transparent;
-        box-shadow: none;
         flex-direction: column;
+        background-color: #333;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+    
+    .main-menu.is-active {
+        display: flex; /* Ditampilkan saat tombol diklik */
+    }
+    
     .main-menu li {
-        padding: 10px 0;
         text-align: center;
+    }
+
+    .main-menu a {
+        padding: 1rem 0;
+        display: block;
+        width: 100%;
+        border-radius: 0;
     }
 
     .product-card.featured {
         flex-direction: column;
         text-align: center;
     }
+    
     .product-card.featured .product-image {
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none;
-    }
-    .main-menu {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
     }
 }
