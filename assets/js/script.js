@@ -1,43 +1,60 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const translateBtn = document.getElementById('translate-btn');
-    let isEnglish = false;
+    const languageSelect = document.getElementById('language-select');
 
-    // Contoh terjemahan sederhana, Anda bisa gunakan data JSON
+    // Data terjemahan dalam format JSON yang terstruktur
     const translations = {
         id: {
-            home: 'Beranda',
-            about: 'Tentang Kami',
-            products: 'Produk',
-            contact: 'Hubungi Kami',
-            heroTitle: 'Solusi Hosting Terbaik untuk Kesuksesan Bisnis Anda'
+            navHome: 'Beranda',
+            navAbout: 'Tentang Kami',
+            navProducts: 'Produk',
+            navContact: 'Hubungi Kami',
+            heroTitle: 'Solusi Hosting Terbaik untuk Kesuksesan Bisnis Anda',
+            heroSubtitle: 'Jadikan website Anda cepat, aman, dan selalu online.',
+            btnSeeProducts: 'Lihat Produk',
+            productHeading: 'Pilih Paket Hosting yang Sesuai',
+            // Tambahkan semua teks lain yang perlu diterjemahkan di sini
         },
         en: {
-            home: 'Home',
-            about: 'About Us',
-            products: 'Products',
-            contact: 'Contact Us',
-            heroTitle: 'The Best Hosting Solution for Your Business Success'
+            navHome: 'Home',
+            navAbout: 'About Us',
+            navProducts: 'Products',
+            navContact: 'Contact Us',
+            heroTitle: 'The Best Hosting Solution for Your Business Success',
+            heroSubtitle: 'Make your website fast, secure, and always online.',
+            btnSeeProducts: 'See Products',
+            productHeading: 'Choose the Right Hosting Plan',
+            // Tambahkan semua terjemahan di sini
         }
     };
 
-    translateBtn.addEventListener('click', function() {
-        if (isEnglish) {
-            document.querySelector('header nav ul li:nth-child(1) a').textContent = translations.id.home;
-            document.querySelector('header nav ul li:nth-child(2) a').textContent = translations.id.about;
-            document.querySelector('header nav ul li:nth-child(3) a').textContent = translations.id.products;
-            document.querySelector('header nav ul li:nth-child(4) a').textContent = translations.id.contact;
-            document.querySelector('.hero h1').textContent = translations.id.heroTitle;
-            translateBtn.textContent = 'English';
-        } else {
-            document.querySelector('header nav ul li:nth-child(1) a').textContent = translations.en.home;
-            document.querySelector('header nav ul li:nth-child(2) a').textContent = translations.en.about;
-            document.querySelector('header nav ul li:nth-child(3) a').textContent = translations.en.products;
-            document.querySelector('header nav ul li:nth-child(4) a').textContent = translations.en.contact;
-            document.querySelector('.hero h1').textContent = translations.en.heroTitle;
-            translateBtn.textContent = 'Indonesia';
-        }
-        isEnglish = !isEnglish;
-    });
+    function applyTranslation(lang) {
+        // Navigasi
+        document.getElementById('nav-home').textContent = translations[lang].navHome;
+        document.getElementById('nav-about').textContent = translations[lang].navAbout;
+        document.getElementById('nav-products').textContent = translations[lang].navProducts;
+        document.getElementById('nav-contact').textContent = translations[lang].navContact;
 
-    // Skrip tambahan untuk fungsionalitas lain dapat ditambahkan di sini
+        // Halaman Beranda (jika ada elemennya)
+        const heroTitleElement = document.querySelector('.hero h1');
+        if (heroTitleElement) {
+            heroTitleElement.textContent = translations[lang].heroTitle;
+            document.querySelector('.hero p').textContent = translations[lang].heroSubtitle;
+            document.querySelector('.hero .btn').textContent = translations[lang].btnSeeProducts;
+        }
+        
+        // Halaman Produk (jika ada elemennya)
+        const productsHeadingElement = document.querySelector('.products h2');
+        if (productsHeadingElement) {
+            productsHeadingElement.textContent = translations[lang].productHeading;
+        }
+    }
+
+    // Terapkan terjemahan saat halaman dimuat (default 'id')
+    applyTranslation(languageSelect.value);
+
+    // Event listener untuk perubahan pada dropdown
+    languageSelect.addEventListener('change', function() {
+        const selectedLang = this.value;
+        applyTranslation(selectedLang);
+    });
 });
