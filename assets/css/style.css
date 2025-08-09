@@ -20,27 +20,32 @@ body {
 
 /* Header */
 header {
-    background: #1a1a1a; /* Warna gelap yang modern */
+    background: #1a1a1a;
     color: #fff;
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Efek bayangan */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-align: center; /* Tambahkan ini agar konten header rata tengah */
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Memungkinkan wrap pada layar kecil */
+    flex-direction: column; /* Mengubah susunan elemen menjadi vertikal */
+    justify-content: center;
+    align-items: center; /* Rata tengah secara horizontal */
 }
+
 
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
 }
-
+header nav {
+    margin-top: 1rem; /* Memberi jarak antara menu navigasi dan logo */
+}
 header nav ul {
     list-style: none;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
 }
@@ -54,7 +59,11 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #333; /* Efek hover yang lebih baik */
+    background-color: #333;
+}
+
+.language-switcher {
+    margin-top: 1rem; /* Memberi jarak antara dropdown bahasa dan menu navigasi */
 }
 /* Gaya untuk Tombol Navigasi */
 .nav-btn {
